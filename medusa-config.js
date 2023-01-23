@@ -52,6 +52,33 @@ const plugins = [
   //     webhook_secret: STRIPE_WEBHOOK_SECRET,
   //   },
   // },
+  {
+    resolve: "medusa-plugin-auth",
+    options: {
+        // Enable google OAuth 2
+        google: {
+            clientID: "512329193621-2o5n9c6p8t9n9m8rqec243oitlit9vqh.apps.googleusercontent.com",
+            clientSecret: "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",
+            // Enable google OAuth 2 for the admin domain
+            // admin: {
+            //     callbackUrl:`${process.env.BACKEND_URL}/admin/auth/google/cb`, 
+            //     failureRedirect: `${process.env.ADMIN_URL}/login`,
+            //     successRedirect: `${process.env.ADMIN_URL}/`,
+            //     expiresIn: 24 * 60 * 60 * 1000
+            // },
+            // Enable google OAuth 2 for the store domain
+            store: {
+                callbackUrl:`${process.env.BACKEND_URL}/store/auth/google/cb`, 
+                failureRedirect: `${process.env.STORE_URL}/login`,
+                successRedirect: `${process.env.STORE_URL}/`,
+                expiresIn: 24 * 60 * 60 * 1000
+            }
+        }
+        // ...
+        // ... Other authentication provider options
+        // ...
+    }
+  }
 ];
 
 module.exports = {
