@@ -89,7 +89,7 @@ module.exports = {
     database_type: "postgres",
     store_cors: STORE_CORS,
     admin_cors: ADMIN_CORS,
-    database_logging: true,
+    // database_logging: true,
   },
   plugins,
 };
