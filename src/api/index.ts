@@ -1,9 +1,10 @@
-import { Router, Request, Response } from 'express';
-import { getRepository } from 'typeorm';
-import { Product } from '../modules/product/entities/product.entity';
+// import { Router, Request, Response } from 'express';
+// import { getRepository } from 'typeorm';
+// import { Product } from '../modules/product/entities/product.entity';
 
 
-const router = Router();
+// const router = Router();
+// console.log('aaaaaaaaaaaaaaa')
 
 // Create a new product
 // router.post('/products', async (req: Request, res: Response) => {
@@ -46,22 +47,26 @@ const router = Router();
 // });
 
 // Update a product
-router.put('/store/products/:id', async (req: Request, res: Response) => {
-  try {
-    const product = await getRepository(Product).findOne(req.params.id);
+// router.post('/admin/products/is-new/:id', async (req: Request, res: Response) => {
+//   console.log('bbbbbbbbbbbbbb')
+//   try {
+//     const product = await getRepository(Product).findOne(req.params.id);
 
-    if (!product) {
-      return res.status(404).json({ error: 'Product not found' });
-    }
+//     if (!product) {
+//       return res.status(404).json({ error: 'Product not found' });
+//     }
+//     if (!req.body.isNew) {
+//       return res.status(400).json({ error: 'Invalid Request' });
+//     }
 
-    product.isNew = req.body.isNew;
-    
-    const savedProduct = await getRepository(Product).save(product);
-    return res.json(savedProduct);
-  } catch (error) {
-    return res.status(500).json({ error: error.message });
-  }
-});
+//     product.isNew = req.body.isNew;
+
+//     const savedProduct = await getRepository(Product).save(product);
+//     return res.json(savedProduct);
+//   } catch (error) {
+//     return res.status(500).json({ error: error.message });
+//   }
+// });
 
 // Delete a product
 // router.delete('/products/:id', async (req: Request, res: Response) => {
@@ -79,4 +84,4 @@ router.put('/store/products/:id', async (req: Request, res: Response) => {
 //   }
 // });
 
-export default router;
+// export default router;

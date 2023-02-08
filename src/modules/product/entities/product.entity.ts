@@ -6,6 +6,6 @@ import { Entity as MedusaEntity } from 'medusa-extender';
 @Entity()
 export class Product extends MedusaProduct {
     @Index()
-    @Column({ type: "boolean" })
-    isNew : boolean | null
+    @Column({ type: "boolean", default: false  })
+    isNew : boolean
 }
